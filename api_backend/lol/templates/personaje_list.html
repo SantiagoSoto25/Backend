@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>League of Legends Lista</title>
+  <!-- Enlace al archivo de estilos de Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class="bg-blue-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-white font-bold text-xl">League of Legends</h1>
+      <ul class="flex space-x-4">
+        <li><a href="#" class="text-white hover:text-gray-200">Inicio</a></li>
+        <li><a href="#" class="text-white hover:text-gray-200">Acerca de</a></li>
+        <li><a href="#" class="text-white hover:text-gray-200">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-4">Lista Personajes</h1>
+    <table class="w-full border-collapse border border-gray-300">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border border-gray-300 px-4 py-2">Nombre</th>
+          <th class="border border-gray-300 px-4 py-2">Linea</th>
+          <th class="border border-gray-300 px-4 py-2">Movimiento</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for personaje in personajes %}
+        <tr class="bg-white">
+          <td class="border border-gray-300 px-4 py-2">{{ personaje.name }}</td>
+          <td class="border border-gray-300 px-4 py-2">{{ personaje.linea }}</td>
+          <td class="border border-gray-300 px-4 py-2">{{ personaje.movimiento }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td class="border border-gray-300 px-4 py-2" colspan="2">No hay personajes disponibles.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <!-- Contenido principal -->
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-4">Lista de Arenas</h1>
+    <table class="w-full border-collapse border border-gray-300">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border border-gray-300 px-4 py-2">Nombre</th>
+          <th class="border border-gray-300 px-4 py-2">Modo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for arena in arenas %}
+        <tr class="bg-white">
+          <td class="border border-gray-300 px-4 py-2">{{ arena.name }}</td>
+          <td class="border border-gray-300 px-4 py-2">{{ arena.modo }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td class="border border-gray-300 px-4 py-2" colspan="2">No hay arenas disponibles.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <!-- Contenido principal -->
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-4">Lista de Skins</h1>
+    <table class="w-full border-collapse border border-gray-300">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border border-gray-300 px-4 py-2">Nombre</th>
+          <th class="border border-gray-300 px-4 py-2">Coste</th>
+          <th class="border border-gray-300 px-4 py-2">Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for skin in skins %}
+        <tr class="bg-white">
+          <td class="border border-gray-300 px-4 py-2">{{ skin.name }}</td>
+          <td class="border border-gray-300 px-4 py-2">{{ skin.coste }}</td>
+          <td class="border border-gray-300 px-4 py-2">{{ skin.tipo }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td class="border border-gray-300 px-4 py-2" colspan="2">No hay skins disponibles.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
